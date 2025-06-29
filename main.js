@@ -5,6 +5,8 @@ const eraserButton = document.querySelector('#eraserBtn')
 const penButton = document.querySelector('#penBtn')
 const magicPenButton = document.querySelector('#magicPenBtn')
 
+alert('To Begin Drawing, Click on the Regular Pen or Magic Pen button')
+
 let penColor = 'black'
 
 resetButton.addEventListener('click', () => {
@@ -41,13 +43,17 @@ function createGrid (gridSize) {
 
         squareDiv.addEventListener('mouseover', () => {
 
-            if (penColor === 'white' || squareDiv.style.backgroundColor === '')
+            if (squareDiv.style.backgroundColor === 'white' || squareDiv.style.backgroundColor === '')
                 {if (penColor === 'magic') {
                     squareDiv.style.backgroundColor = rainbowColor()
                 }
                 else 
                 {squareDiv.style.backgroundColor = penColor}
-        }})
+        }
+            else if (penColor === 'white') {
+                squareDiv.style.backgroundColor = 'white'
+            }
+        })
 
         gridContainer.appendChild(squareDiv)
     }
