@@ -40,12 +40,14 @@ function createGrid (gridSize) {
 
 
         squareDiv.addEventListener('mouseover', () => {
-            if (penColor === 'magic') {
-                squareDiv.style.backgroundColor = rainbowColor()
-            }
-            else 
-             {squareDiv.style.backgroundColor = penColor}
-        })
+
+            if (penColor === 'white' || squareDiv.style.backgroundColor === '')
+                {if (penColor === 'magic') {
+                    squareDiv.style.backgroundColor = rainbowColor()
+                }
+                else 
+                {squareDiv.style.backgroundColor = penColor}
+        }})
 
         gridContainer.appendChild(squareDiv)
     }
