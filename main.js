@@ -4,6 +4,7 @@ const resetButton = document.querySelector('#resetBtn')
 
 resetButton.addEventListener('click', () => {
     gridContainer.textContent = ''
+    createGrid(16)
 })
 
 function createGrid (gridSize) {
@@ -16,6 +17,11 @@ function createGrid (gridSize) {
         squareDiv.classList.add('grid-square')
         squareDiv.style.width = `${squareSize}px`
         squareDiv.style.height = `${squareSize}px`
+
+        squareDiv.addEventListener('mouseover', () => {
+            squareDiv.style.backgroundColor = 'black'
+        })
+
         gridContainer.appendChild(squareDiv)
     }
 }
