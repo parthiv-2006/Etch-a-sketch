@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-a-Sketch</title>
+    <!-- Import Google Font: Inter for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header section containing title, instructions, and control buttons -->
     <div class="header">
         <div class="header-text">
             <h1>Etch-a-Sketch</h1>
             <h3>Click on the Regular Pen or Magic Pen to start Drawing</h3>
+            <!-- Container for all control buttons -->
             <div class="buttons">
-                <button class= "butt" id="resetBtn">Reset Grid</button>
-                <button class= "butt" id="eraserBtn">Eraser</button>
-                <button class= "butt" id="penBtn">Regular Pen</button>
-                <button class= "butt" id="magicPenBtn">Magic Pen</button>
-                <button class= "butt" id="changeGridBtn">Change Grid Size</button>
+                <button class="butt" id="resetBtn">Reset Grid</button>
+                <button class="butt" id="eraserBtn">Eraser</button>
+                <button class="butt" id="penBtn">Regular Pen</button>
+                <button class="butt" id="magicPenBtn">Magic Pen</button>
+                <button class="butt" id="changeGridBtn">Change Grid Size</button>
             </div>
         </div>
     </div>
 
+    <!-- Main grid container where the drawing squares will be generated -->
     <div class="grid-container">
-
+        <!-- Grid squares are dynamically added here by JavaScript -->
     </div>
 
-
+    <!-- Link to your JavaScript file. 'defer' ensures HTML is parsed before script runs. -->
     <script src="main.js" defer></script>
 </body>
 </html>
