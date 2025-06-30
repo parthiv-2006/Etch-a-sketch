@@ -5,9 +5,8 @@ const eraserButton = document.querySelector('#eraserBtn')
 const penButton = document.querySelector('#penBtn')
 const magicPenButton = document.querySelector('#magicPenBtn')
 
-alert('To Begin Drawing, Click on the Regular Pen or Magic Pen button')
 
-let penColor = 'black'
+let penColor = 'white'
 
 resetButton.addEventListener('click', () => {
     gridContainer.textContent = ''
