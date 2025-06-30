@@ -1,17 +1,26 @@
 const gridContainer = document.querySelector('.grid-container')
-
 const resetButton = document.querySelector('#resetBtn')
 const eraserButton = document.querySelector('#eraserBtn')
 const penButton = document.querySelector('#penBtn')
 const magicPenButton = document.querySelector('#magicPenBtn')
+const changeGridButton = document.querySelector('#changeGridBtn')
 
 
 let penColor = 'white'
+let userGridSize = 16
+
+changeGridButton.addEventListener('click', () => {
+    size = getCustomGrid()
+    gridContainer.textContent = ''
+    createGrid(size)
+})
 
 resetButton.addEventListener('click', () => {
     gridContainer.textContent = ''
-    createGrid(16)
+    createGrid(userGridSize)
 })
+
+
 
 magicPenButton.addEventListener('click', () => {
     penColor = 'magic'
@@ -58,4 +67,23 @@ function createGrid (gridSize) {
     }
 }
 
-createGrid(16)
+function getCustomGrid() {
+    userGridSize = prompt('What would you like your grid size to be? (Please enter a value between 1-100)')
+    
+    userGridSize = parseInt(userGridSize)
+
+    const MAXGRIDSIZE = 100
+    const MINGRIDSIZE = 1
+
+
+    while (isNaN(userGridSize) || userGridSize > MAXGRIDSIZE || userGridSize < MINGRIDSIZE) {
+        userGridSize = prompt('Invalid Grid Size. Please Enter a Value between 1-100')
+        userGridSize = parseInt(userGridSize)
+    }
+
+    return userGridSize
+
+}
+
+
+createGrid(userGridSize)
