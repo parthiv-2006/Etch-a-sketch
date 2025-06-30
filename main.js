@@ -8,27 +8,46 @@ const changeGridButton = document.querySelector('#changeGridBtn')
 
 let penColor = 'white'
 let userGridSize = 16
+const defaultButtonColour = '#8BC34A'
 
 changeGridButton.addEventListener('click', () => {
     size = getCustomGrid()
     gridContainer.textContent = ''
+    magicPenButton.style.backgroundColor = defaultButtonColour
+    penButton.style.backgroundColor = defaultButtonColour
+    eraserButton.style.backgroundColor = defaultButtonColour
     createGrid(size)
 })
 
 resetButton.addEventListener('click', () => {
     gridContainer.textContent = ''
+    magicPenButton.style.backgroundColor = defaultButtonColour
+    penButton.style.backgroundColor = defaultButtonColour
+    eraserButton.style.backgroundColor = defaultButtonColour
     createGrid(userGridSize)
 })
 
 
-
 magicPenButton.addEventListener('click', () => {
+    magicPenButton.style.backgroundColor = 'darkgreen'
+    penButton.style.backgroundColor = defaultButtonColour
+    eraserButton.style.backgroundColor = defaultButtonColour
     penColor = 'magic'
 })
 
-penButton.addEventListener('click', () => {penColor = 'black'})
+penButton.addEventListener('click', () => {
+    penColor = 'black'
+    magicPenButton.style.backgroundColor = defaultButtonColour
+    penButton.style.backgroundColor = 'darkgreen'
+    eraserButton.style.backgroundColor = defaultButtonColour
+})
 
-eraserButton.addEventListener('click', () => {penColor = 'white'})
+eraserButton.addEventListener('click', () => {
+    penColor = 'white'
+    magicPenButton.style.backgroundColor = defaultButtonColour
+    penButton.style.backgroundColor = defaultButtonColour
+    eraserButton.style.backgroundColor = 'darkgreen'
+})
 
 function rainbowColor () {
     const r = Math.floor(Math.random() * 256)
