@@ -3,14 +3,15 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: aquamarine;
+    background-color: #FDF5E6;
     align-items: center;
+    font-family: 'Inter', sans-serif ;
 }
 
 .header {
     display: flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color: #FFE0B2;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -22,10 +23,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #5C4033;
 }
 
 .header-text h1 {
     margin-bottom: 0;
+    text-shadow: 2px 2px 2px lightgrey;
+    font-size: 50px;
 }
 
 .buttons {
@@ -33,6 +37,27 @@ body {
     gap: 15px;
     justify-content: center;
     align-items: center;
+}
+
+.butt {
+    padding: 5px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #8BC34A;
+    transition: all 0.15s ease-out;
+    border-radius: 5px;
+}
+
+.butt:hover {
+    background-color: #7CB342;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.butt:active {
+    background-color: #689F38;
+    transform: translateY(1px);
+    transition: 0.15s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grid-container {
