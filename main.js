@@ -11,12 +11,19 @@ let userGridSize = 16
 const defaultButtonColour = '#8BC34A'
 
 changeGridButton.addEventListener('click', () => {
-    size = getCustomGrid()
-    gridContainer.textContent = ''
-    magicPenButton.style.backgroundColor = defaultButtonColour
-    penButton.style.backgroundColor = defaultButtonColour
-    eraserButton.style.backgroundColor = defaultButtonColour
-    createGrid(size)
+    let prevGrid = userGridSize
+    const size = getCustomGrid()
+
+    if (size !== null) {
+        gridContainer.textContent = ''
+        magicPenButton.style.backgroundColor = defaultButtonColour
+        penButton.style.backgroundColor = defaultButtonColour
+        eraserButton.style.backgroundColor = defaultButtonColour
+        createGrid(size)
+    }
+    else {
+        userGridSize = prevGrid
+    }
 })
 
 resetButton.addEventListener('click', () => {
@@ -89,11 +96,14 @@ function createGrid (gridSize) {
 function getCustomGrid() {
     userGridSize = prompt('What would you like your grid size to be? (Please enter a value between 1-100)')
     
-    userGridSize = parseInt(userGridSize)
-
     const MAXGRIDSIZE = 100
     const MINGRIDSIZE = 1
+   
+    if (userGridSize === null) {
+        return null
+    }
 
+    userGridSize = parseInt(userGridSize)
 
     while (isNaN(userGridSize) || userGridSize > MAXGRIDSIZE || userGridSize < MINGRIDSIZE) {
         userGridSize = prompt('Invalid Grid Size. Please Enter a Value between 1-100')
